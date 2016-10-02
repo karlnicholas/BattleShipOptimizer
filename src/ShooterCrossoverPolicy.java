@@ -5,9 +5,9 @@ import org.apache.commons.math3.genetics.CrossoverPolicy;
 
 public class ShooterCrossoverPolicy implements CrossoverPolicy {
 
-	@Override
-	public ChromosomePair crossover(Chromosome first, Chromosome second) throws MathIllegalArgumentException {
-		return new ChromosomePair(first, second);
-	}
+    @Override
+    public ChromosomePair crossover(Chromosome first, Chromosome second) throws MathIllegalArgumentException {
+        return new ChromosomePair(first, second);
+    }
 
 }

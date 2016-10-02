@@ -16,35 +16,35 @@ public class BattleShipOptimizer {
     private static final double ELITISM_RATE = 0.2;
 
     private static final int POPULATION_SIZE = 10;
-	private static final int NUM_GENERATIONS = 1000;
+    private static final int NUM_GENERATIONS = 1000;
     private static final int TOURNAMENT_ARITY = 5;
     
-	public static void main(String[] args) {
-		new BattleShipOptimizer().run();
-	}
-	private void run() {
-		// initialize a new genetic algorithm
-		GeneticAlgorithm ga = new GeneticAlgorithm(
-			new ShooterCrossoverPolicy(),
-		    CROSSOVER_RATE,
-		    new ShooterMutator(),
-		    MUTATION_RATE,
-		    new TournamentSelection(TOURNAMENT_ARITY)
-		);
-		        
-		// initial population
-		Population initial = getInitialPopulation();
-		        
-		// stopping condition
-		StoppingCondition stopCond = new FixedGenerationCount(NUM_GENERATIONS);
-		        
-		// run the algorithm
-		Population finalPopulation = ga.evolve(initial, stopCond);
-		        
-		// best chromosome from the final population
-		Chromosome bestFinal = finalPopulation.getFittestChromosome();
-		System.out.println(bestFinal);
-	}
+    public static void main(String[] args) {
+        new BattleShipOptimizer().run();
+    }
+    private void run() {
+        // initialize a new genetic algorithm
+        GeneticAlgorithm ga = new GeneticAlgorithm(
+            new ShooterCrossoverPolicy(),
+            CROSSOVER_RATE,
+            new ShooterMutator(),
+            MUTATION_RATE,
+            new TournamentSelection(TOURNAMENT_ARITY)
+        );
+                
+        // initial population
+        Population initial = getInitialPopulation();
+                
+        // stopping condition
+        StoppingCondition stopCond = new FixedGenerationCount(NUM_GENERATIONS);
+                
+        // run the algorithm
+        Population finalPopulation = ga.evolve(initial, stopCond);
+                
+        // best chromosome from the final population
+        Chromosome bestFinal = finalPopulation.getFittestChromosome();
+        System.out.println(bestFinal);
+    }
 
     /**
      * Initializes a random population.
