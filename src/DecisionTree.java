@@ -1,5 +1,3 @@
-
-
 /**
  * A Node in the Shot Decision tree. Go to next node depending on whether the shot hit or missed
  * 
